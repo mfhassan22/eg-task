@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: ./api
+    shm_size: 1gb
+    volumes:
+      - '..:/var/www'
+    ports:
+    - "3000:3000"
+
+  react:
+    build:
+      context: ./app
+    shm_size: 1gb
+    volumes:
+      - '..:/var/www'
+    ports:
+    - "3001:3001"
